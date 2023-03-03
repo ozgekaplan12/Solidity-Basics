@@ -14,11 +14,41 @@ contract Interact {
 contract Pay {
     mapping (address => uint256) public userBalances;
 
+    // receive , fallback
+
     function payEth(address _payer) external payable {
         userBalances[_payer] += msg.value;
     }
 }
 
 contract Caller {
+    Interact interact; 
 
+    constructor (address _interactContract) {
+        interact = Interact(_interactContract); 
+    }
+
+    function callInteract() external {
+        interact.callThis();
+    }
+
+    function readCaller() external view returns (address) {
+        return interact.caller();
+    }
+
+    function readCallerCount() public view returns (uint256){
+        return interact.counts(msg.sender);
+    }
+
+    function payToPay(address _payAddress) public payable {
+        Pay pay = Pay(_payAddress);
+        pay.payEth{value: msg.value}(msg.sender);
+
+        // Pay(_payAddress).payEth{value: msg.value}(msg.sender);
+    }
+
+    function sendEthByTransfer() public payable {
+        payable(address(interact)).transfer(msg.value);
+    }
+    
 } 
