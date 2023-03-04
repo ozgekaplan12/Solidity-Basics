@@ -21,4 +21,17 @@ contract Test {
 
 contract Caller {
 
+
+    function testCall(address _contract, uint256 _amount , string memory _incrementer) external returns(bool, uint256) {
+        (bool err, bytes memory res) = _contract.call(abi.encodeWithSignature("inc(uint256,string)" , _amount, _incrementer));
+
+        uint256 _total = abi.decode(res, (uint256));
+        return(err, _total);
+    }
+
+    function payToFallback(address _contract) external payable {
+        (bool _err, )= _contract.call{value: msg.value}("");
+
+        if(!_err) revert();
+    }
 }
