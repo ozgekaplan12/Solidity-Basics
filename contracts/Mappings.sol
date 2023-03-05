@@ -25,6 +25,7 @@ contract Mapping{
 }
 
 contract NestedMapping{
+
     mapping(address => mapping(address => uint256)) public debts;
 
     function incDebt(address _borrower, uint256 _amount) public {
