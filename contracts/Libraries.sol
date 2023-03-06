@@ -49,7 +49,6 @@ contract Library {
     // }
 
 
-
     function trial1(uint x, uint y) public pure returns(uint){
         return Math.plus(x,y);
     }
