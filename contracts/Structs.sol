@@ -52,7 +52,7 @@ contract StructEnum {
 
 
     // bir diğer yol 
-     //orders.push(Order(msg.sender, _zipCode, _products, Status.Taken))
+    //orders.push(Order(msg.sender, _zipCode, _products, Status.Taken))
      }
 
      function advanceOrder(uint256 _orderId) external {
