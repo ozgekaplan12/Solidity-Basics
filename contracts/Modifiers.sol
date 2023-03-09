@@ -85,6 +85,7 @@ contract StructEnum {
     modifier incTx {
         _;
         txCount ++;
+        
     }
 
     modifier onlyOwner {
