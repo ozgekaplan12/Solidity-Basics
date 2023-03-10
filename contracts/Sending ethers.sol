@@ -26,7 +26,6 @@ contract Bank {
 
     // Send()
     // ture, false 
-
     // Call()
 
     function withdraw2(address payable to, uint amount) external returns(bool) {
