@@ -2,15 +2,15 @@
 pragma solidity ^0.8.0;
 
 // sadece başlangıçta çalışan özel fonksiyondur.
-//  contract Constructor { 
-//     string public tokenName;
-//     uint public totalSupply;
+  contract Constructor { 
+     string public tokenName;
+     uint public totalSupply;
 
-//     constructor(string memory name, uint number) {
-//         tokenName = name;
-//         totalSupply = number;
+     constructor(string memory name, uint number) {
+         tokenName = name;
+         totalSupply = number;
 
-//     }
+     }
 
 //     function set(uint number) public {
 //         totalSupply = number;
