@@ -6,6 +6,7 @@ pragma solidity ^0.8.0;
 
      function showNumber() public view returns(uint) {
        return luckyNumber;
+       
      }
 
      function setNumber(uint newNumber) public {
