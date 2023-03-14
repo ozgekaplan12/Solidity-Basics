@@ -68,6 +68,7 @@ contract Functions {
     }
     // Private: Bu fonksiyona sadece bu kontrat ulaşabilir. Dışarıdan kimse bu fonksiyona ulaşamaz.
 
+
     function privateKeyword() private pure returns (string memory) {
         return "Bu bir private fonksiyondur";
     }
