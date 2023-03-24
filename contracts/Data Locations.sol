@@ -50,6 +50,7 @@ contract School {
         uint8 newAge, 
         uint16 newScore
     ) external {
+    
         Student storage currentStudent = students[id];
 
 
